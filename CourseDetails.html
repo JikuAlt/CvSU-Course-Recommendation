@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<script src="scripts\functionscript.js"></script>
+<link rel="stylesheet" href="CSS_Main.css">
+<link rel="stylesheet" href="CSS_Sub.css">
+<title>   </title>
+</head>
+<body class=body>
+<div style="display: block">
+		<a href="HOMEPAGE_Html.html" class="h1"> <h1>CvSU Courses</h1> </a>
+	<div class=parentdiv>
+		<div class="coursedivbanner"> 
+			<div class=h2> <h2>  </h2> </div>
+
+			<div class=h2 style=h3> <p>  </p> </div>
+		</div>
+
+		<div class=coursepicbanner> <img src="" class="coursesizing" alt="coursebanner.png" > </div>
+	</div>
+
+	<!-- STRAND -->
+	<br> 
+	<div class="largefilterdiv">
+	    <div class="txtdp1" style="align-items: center; margin-left: 1%; display: flex;">
+	        <div><img src="images/FILTER.png" alt="Filter icon" class="filterimagev2"></div>
+	        <div>
+	            <p class="p1" style="color:darkgreen;">
+	                <span style="font-size: 0.95em; margin-left: 10px;">Strand:</span>
+	            </p>
+	        </div>
+	    </div>
+	</div>
+
+	<!-- REQUIREMENT -->
+	<br> </br>
+	<div class="largefilterdiv">
+		<div class="txtdp2" style="align-items: center; margin-left: 1%; display: flex;">
+			<div><img src="images/REQUIREMENT.png" alt="Requirement icon" class="filterimagev2"></div>
+	        <div>
+				<p class=p1 style="color:darkgreen;"> <span style="font-size: 0.95em; margin-left: 10px"> Requirement: </span> <p> 
+			</div>
+		</div>
+	</div>
+
+	<!-- CAMPUS-->
+	<br> </br>
+	<div class="largefilterdiv">
+		<div class="txtdp3" style="align-items: center; margin-left: 1%; display: flex;">
+			<div><img src="images/CAMPUS.png" alt="Feature icon" class="filterimagev2"></div>
+	        <div>
+				<p class=p1 style="color:darkgreen;"> <span style="font-size: 0.95em; margin-left: 10px"> Campus: </span> <p> 
+			</div>
+		</div>
+	</div>
+
+	<!-- FEATURE -->
+	<br> </br>
+	<div class="largefilterdiv">
+		<div class="txtdp4" style="align-items: center; margin-left: 1%; display: flex;">
+			<div><img src="images/FEATURE.png" alt="Feature icon" class="filterimagev2"></div>
+	        <div>
+				<p class=p1 style="color:darkgreen;"> <span style="font-size: 0.95em; margin-left: 10px"> Feature: </span> <p> 
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+
+
+
+<script src="scripts\data.js"> </script>	
+<script src="scripts\script.js"> </script>
+<script src="scripts\flashcourse.js"> </script>	
+
+<script>
+
+	document.addEventListener("DOMContentLoaded", function () {
+	    // Get the courseName and courseDesc from the URL parameters
+	    const urlParams = new URLSearchParams(window.location.search);
+	    const courseName = urlParams.get('course');
+
+	    // Find the course data by matching the courseName in the data.js
+	    const selectedCourse = courses1.data.find(course => course.courseName === courseName);
+
+	    // APPEND TITLE
+	    document.title = `CvSU Courses - ${courseName}`;
+
+	    // BIND COURSE NAME
+	    const h2Element = document.querySelector('.h2 h2');
+	    if (h2Element) {
+	        h2Element.innerText = courseName;
+	    }
+
+	    // BIND COURSE DESCRIPTION
+	    const courseDescElement = document.querySelector('.h2 p');
+	    if (courseDescElement && selectedCourse && selectedCourse.courseDesc) {
+	        courseDescElement.innerText = selectedCourse.courseDesc.join('\n');
+	    }
+
+	    // BIND IMAGE
+	    const courseImgElement = document.querySelector('.coursepicbanner img');
+	    if (courseImgElement && selectedCourse && selectedCourse.image) {
+	        courseImgElement.src = selectedCourse.image;
+	    }
+
+	    // APPEND STRAND
+	    const strandsElement = document.querySelector('.largefilterdiv .txtdp1 p');
+	    if (strandsElement && selectedCourse && selectedCourse.strand) {
+	    strandsElement.innerHTML += `<span style="font-size: 0.95em; margin-left: 10px; color:black;">${selectedCourse.strand.join(', ')}</span>`;
+		}
+
+		// APPEND REQUIREMENT
+	    const requirementElement = document.querySelector('.largefilterdiv .txtdp2 p');
+	    if (requirementElement && selectedCourse && selectedCourse.requirement) {
+	    requirementElement.innerHTML += `<span style="font-size: 0.95em; margin-left: 10pxl; color:black;">${selectedCourse.requirement.join(', ')}</span>`;
+		}
+
+		// CAMPUS FEATURE
+	    const campusElement = document.querySelector('.largefilterdiv .txtdp3 p');
+	    if (campusElement && selectedCourse && selectedCourse.campus) {
+	    campusElement.innerHTML += `<span style="font-size: 0.95em; margin-left: 10px; color:black;">${selectedCourse.campus.join(', ')}</span>`;
+		}
+
+		// APPEND FEATURE
+	    const featureElement = document.querySelector('.largefilterdiv .txtdp4 p');
+	    if (featureElement && selectedCourse && selectedCourse.feature) {
+	    featureElement.innerHTML += `<span style="font-size: 0.95em; margin-left: 10px; color:black;">${selectedCourse.feature.join(', ')}</span>`;
+		}
+	    
+
+	});
+
+</script>
+</html>

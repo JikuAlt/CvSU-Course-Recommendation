@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="stylesheet" href="CSS_Main.css">
+
+  <link rel="stylesheet" href="CSS_SUB.css">
+
+  <!-- Link to Poppins font from Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap">
+
+<title>Error 404</title>
+  <style>
+    body {
+      display: flex; align-items: center; justify-content: center;
+      height: 100vh;margin: 0;}
+
+    .error-container {text-align: center;}
+  </style>
+</head>
+
+<body>
+  <div class="error-container">
+    <img src="images/suierror404.png" alt="Error 404 image" style="width: 10em; height:10em">
+    <h1>Ooops...Error 404</h1>
+    <h2 style=font-weight:normal>Sorry, the page you are looking for doesn't exist. Please try again</h2>
+  </div>
+	
+
+<script src="{{url_for('static', filename='js/data.js')}}"> </script>	
+<script src="{{url_for('static', filename='js/script.js')}}"> </script>
+<script src="{{url_for('static', filename='js/flashcourse.js')}}"> </script>
+
+
+
+
+</body>
+</html>

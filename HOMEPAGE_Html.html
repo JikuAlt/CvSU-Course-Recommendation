@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<link rel="stylesheet" href="CSS_Main.css">
+<title> CvSU Course Recommendation </title>
+</head>
+
+
+<body class="body">
+	<a href="HOMEPAGE_Html.html" class="h1" > <h1>CvSU Courses</h1> </a>
+	<center>
+
+	<!-- SEARCH INPUT -->
+	<div class="wrapper"> 
+		<div id="search-container"> 
+			<input type="search" id="search-input" placeholder="Search courses here"/>
+			<button class="button-search" id="search"> <img src="images\SEARCH.png" alt="search icon" class="filterimagev2"> </button>
+		</div>
+	</div> </center>
+
+<div style="display: flex; justify-content: space-between;padding: 0 10px;">
+    <!-- Left Section: DEFAULT TEXT, FLASH CARD, and COURSES DIV -->
+    <div style="display: flex; flex-direction: column; width: calc(100% - 10px);">
+        <!-- DEFAULT TEXT -->
+        <div style="">
+            <center>
+                <p id="defaultMessage" class="dm1">Welcome, pick your CvSU course now!</p>
+            </center>
+        </div>
+
+        <!-- FLASH CARD -->
+        <center>
+            <div class="flash-card" id="flashCard" style="margin-top: 3em;">
+                <img id="imageDisplay" src="" alt="Random Image">
+            </div>
+        </center>
+
+        <!-- Courses Div (independent) -->
+        <div class="container" style="display: inline-grid; flex-grow: 1; width: calc(70% - 10px); margin-right: 25%" id="courses1"></div>
+    </div>
+
+    <!-- Right Section: FILTERS DIV -->
+    <div class="filtersection" style="position: absolute; right: 0;">
+      <div style="margin-bottom: 1em; margin-top: 2.55em;">
+        <p class="p2">All courses</p> <br>
+        <label class="p3"> <input type="radio" id="allRadio" name="allRadio" class="radio-container" value="ALL" onclick="handleRadioClick('ALL')"> ALL </label> <br>
+      </div>
+
+			<div style="margin-bottom: 1em;">
+			<p class="p2">Strands</p> <br>
+			<label class="p3"> <input type="radio" id="abmRadio" name="strandRadio" class="radio-container" value='ABM'  onclick="handleRadioClick('ABM')"> ABM </label> <br>
+
+			<label class="p3"> <input type="radio" id="gasRadio" name="strandRadio"  class="radio-container" value="GAS" onclick="handleRadioClick('GAS')"> GAS </label> <br>
+
+			<label class="p3"> <input type="radio" id="humssRadio" name="strandRadio" class="radio-container" value="HUMSS" onclick="handleRadioClick('HUMSS')"> HUMSS </label> <br>
+
+			<label class="p3"> <input type="radio" id="stemRadio" name="strandRadio"  class="radio-container" value="STEM"  onclick="handleRadioClick('STEM')"> STEM </label> <br>
+
+			<label class="p3"> <input type="radio" id="tvlRadio" name="strandRadio"  class="radio-container" value="TVL" onclick="handleRadioClick('TVL')"> TVL </label> <br>
+
+			<label class="p3"> <input type="radio" id="artsanddesignRadio" name="strandRadio"  class="radio-container" value="Arts_and_design" onclick="handleRadioClick('Arts_and_design')"> Arts and design </label> <br>
+
+			<label class="p3"> <input type="radio" id="sportsRadio" name="strandRadio"  class="radio-container" value="Sports" onclick="handleRadioClick('Sports')"> Sports </label> <br>
+			</div>
+
+			<div style="margin-bottom: 1em;">
+			<p class="p2">Requirements</p> <br>
+			<label class="p3"> <input type="radio" id="gpaRadio" name="requireRadio" class="radio-container" value="GPA_of_85+" onclick="handleRadioClick('GPA_of_85+')"> GPA of 85+ </label> <br>
+
+			<label class="p3"> <input type="radio" id="gradeRadio" name="requireRadio" class="radio-container" value="85+_in_Math,_Science_&_English" onclick="handleRadioClick('85+_in_Math,_Science_&_English')"> 85+ in Math, Science & English </label> <br>
+			</div>
+
+			<div style="margin-bottom: 1em;">
+			<p class="p2">Campus</p> <br>
+			<label class="p3"> <input type="radio" id="bacoorRadio" name="campusRadio" class="radio-container" value="Bacoor" onclick="handleRadioClick('Bacoor')"> Bacoor </label> <br>
+
+			<label class="p3"> <input type="radio" id="carmonaRadio" name="campusRadio" class="radio-container" value="Carmona" onclick="handleRadioClick('Carmona')"> Carmona </label> <br>
+
+			<label class="p3"> <input type="radio" id="cavitecityRadio" name="campusRadio" class="radio-container" value="Cavite_City" onclick="handleRadioClick('Cavite_City')"> Cavite City </label> <br>
+
+			<label class="p3"> <input type="radio" id="generaltriasRadio" name="campusRadio" class="radio-container" value="General_Trias" onclick="handleRadioClick('General_Trias')"> General Trias </label> <br>
+
+			<label class="p3"> <input type="radio" id="imusRadio" name="campusRadio" class="radio-container" value="Imus" onclick="handleRadioClick('Imus')"> Imus </label> <br>
+
+			<label class="p3"> <input type="radio" id="maragondonRadio" name="campusRadio" class="radio-container" value="Maragondon" onclick="handleRadioClick('Maragondon')"> Maragondon </label> <br>
+
+			<label class="p3"> <input type="radio" id="maincampusindangRadio" name="campusRadio" class="radio-container" value="Main_Campus_-_Indang" onclick="handleRadioClick('Main_Campus_-_Indang')"> Main Campus - Indang </label> <br>
+
+			<label class="p3"> <input type="radio" id="naicRadio" name="campusRadio" class="radio-container" value="Naic" onclick="handleRadioClick('Naic')"> Naic </label> <br>
+
+			<label class="p3"> <input type="radio" id="rosarioRadio" name="campusRadio" class="radio-container" value="Rosario" onclick="handleRadioClick('Rosario')"> Rosario </label> <br>
+
+			<label class="p3"> <input type="radio" id="silangRadio" name="campusRadio" class="radio-container" value="Silang" onclick="handleRadioClick('Silang')"> Silang </label> <br>
+
+			<label class="p3"> <input type="radio" id="tanzaRadio" name="campusRadio" class="radio-container" value="Tanza" onclick="handleRadioClick('Tanza')"> Tanza </label> <br>
+
+			<label class="p3"> <input type="radio" id="treceRadio" name="campusRadio" class="radio-container" value="Trece_Martires_City" onclick="handleRadioClick('Trece_Martires_City')"> Trece Martires City </label> <br> </div>
+		</div> 
+	</div>
+</div>
+
+
+<script src="scripts\data.js"> </script>	
+<script src="scripts\script.js"> </script>
+<script src="scripts\flashcourse.js"> </script>	
+
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
+  // Function to hide the default message
+  function hideDefaultMessage() {
+    const defaultMessage = document.getElementById('defaultMessage');
+    if (defaultMessage) {
+      defaultMessage.style.display = 'none';
+    }
+  }
+
+  // Function to hide the flash card
+  function hideFlashCard() {
+    const flashCard = document.getElementById('flashCard');
+    if (flashCard) {
+      flashCard.style.display = 'none';
+    }
+  }
+
+  // RADIO BUTTONS
+  const radioButtons = document.querySelectorAll('input[type="radio"]');
+  radioButtons.forEach(radio => {
+    radio.addEventListener('click', () => {
+      // Hide the default message and flash card when a radio button is clicked
+      hideDefaultMessage();
+      hideFlashCard();
+      // Add your radio button logic here
+      // ...
+    });
+  });
+
+  // SEARCHING
+  document.getElementById("search").addEventListener("click", () => {
+    // Hide the default message and flash card when searching
+    hideDefaultMessage();
+    hideFlashCard();
+  });
+
+  document.getElementById("search-input").addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+      // Hide the default message and flash card when pressing Enter in the search input
+      hideDefaultMessage();
+      hideFlashCard();
+      // Perform the search logic here (you can call your existing performSearch function)
+      performSearch();
+    }
+  });
+
+  // On page load, show the default message and flash card
+  // (They will be hidden when a radio button is clicked or the search button is used)
+  const defaultMessage = document.getElementById('defaultMessage');
+  if (defaultMessage) {
+    defaultMessage.style.display = 'block'; // Set the initial display property as needed (e.g., 'block')
+  }
+
+  const flashCard = document.getElementById('flashCard');
+  if (flashCard) {
+    flashCard.style.display = 'block'; // Set the initial display property as needed (e.g., 'block')
+  }
+});
+
+ </script>
+
+</body>
+</html>
